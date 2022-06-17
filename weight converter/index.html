@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="dsiplay-4 text-center mt-4 text-white">
+            Weight converter
+          </h1>
+          <form>
+            <div class="form-group">
+              <input
+                type="number"
+                class="form-control form-control-lg"
+                placeholder="Enter Pounds"
+                id="inputValue"
+              />
+            </div>
+          </form>
+          <div id="output" class="mt-5">
+            <div class="card bg-primary text-white mb-1">
+              <div class="card-body">
+                <h4 class="card-title">Grams:</h4>
+                <div class="GramsOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-success text-white mb-1">
+              <div class="card-body">
+                <h4 class="card-title">Kilograms:</h4>
+                <div class="KgOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-danger text-white">
+              <div class="card-body">
+                <h4 class="card-title">Ounces:</h4>
+                <div class="OzOutput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.querySelector("#inputValue").addEventListener("input", (e) => {
+      const pounds = e.target.value;
+      document.querySelector(".GramsOutput").innerHTML = pounds / 0.0022046;
+      document.querySelector(".KgOutput").innerHTML = pounds / 2.205;
+      document.querySelector(".OzOutput").innerHTML = pounds * 16;
+    });
+  </script>
+  ;
+</html>
